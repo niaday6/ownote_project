@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>
+    회원가입
+</h1>
+<form th:action="@{/emp/logIn}" method="post">
+<!--    <p>-->
+<!--        <label for="empNum">사원번호</label>-->
+<!--        <input type="text" name="empNum"/>-->
+<!--    </P>-->
+    <p>
+        <label for="empPassword">비밀번호</label>
+        <input type="password" name="empPassword"/>
+    </P>
+    <p>
+        <label for="empBirth">생년 월일</label>
+        <input type="text" name="empBirth"/>
+    </P>
+    <p>
+        <label for="empName">사원 이름</label>
+        <input type="text" name="empName"/>
+    </P>
+    <p>
+        <label for="empEmail">이메일</label>
+        <input type="text" name="empEmail"/>
+    </P>
+    <p>
+        <label for="empPhone">전화 번호</label>
+        <input type="text" name="empPhone"/>
+    </P>
+    <p>
+        <label for="gradeNum">직책</label>
+        <select name="gradeNum" id="gradeSelect">
+            <option value="0">사원</option>
+            <option value="1">주임</option>
+            <option value="2">대리</option>
+            <!-- 다른 직책 옵션들을 여기에 추가 -->
+        </select>
+    </p>
+    <p>
+        <label for="deptNum">부서</label>
+        <select name="deptNum">
+            <option value="10">회계</option>
+            <option value="20">영업</option>
+            <option value="30">개발</option>
+            <option value="40">인사</option>
+            <option value="50">경영</option>
+            <option value="60">물류</option>
+        </select>
+    </p>
+    <input type="submit" value="가입하기"></input>
+</form>
+</body>
+</html>
