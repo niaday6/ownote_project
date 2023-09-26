@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1">
+    <tr><th>기존 연차</th><th>추가된 연차</th><th>사용된 연차</th><th>잔여 연차</th></tr>
+    <tr th:each="obj : ${list}">
+        <td th:text="${obj.anndata_date}"></td>
+        <td th:text="${obj.anndata_add}"></td>
+        <td th:text="${obj.anndata_used}"></td>
+        <td th:text="${obj.anndata_extra}"></td>
+
+    </tr>
+</table>
+</body>
+</html>
