@@ -35,7 +35,14 @@
         <td th:text="${obj.annual_enddate}"></td>
         <td th:text="${obj.annual_time}"></td>
         <td th:text="${obj.anninfo_code}"></td>
-        <td th:text="${obj.anncheck_id == 1 ? '승인 대기중' : (obj.anncheck_id == 2 ? '승인':'반려')}"> </td>
+        <td>
+            <select th:if="${obj.anncheck_id == 1}" >
+                <option value="2">승인</option>
+                <option value="3">반려</option>
+            </select>
+            <span th:unless="${obj.anncheck_id == 1}" th:text="${obj.anncheck_id == 2 ? '승인' : '반려'}"></span>
+        </td>
+<!--        <td th:text="${obj.anncheck_id == 1 ? '승인 대기중' : (obj.anncheck_id == 2 ? '승인':'반려')}"> </td>-->
 <!--        <td th:text="${annualService.findEmpNameById(obj.emp_id)}"></td>-->
     </tr>
 
