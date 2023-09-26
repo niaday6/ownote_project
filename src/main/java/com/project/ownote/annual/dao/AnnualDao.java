@@ -18,4 +18,8 @@ public int countAnnual();
 
     String findEmpNameById(int emp_id);
     List<AnnualDto> annualAllList(int startRow, int size);
+
+//    List<AnnualDto>annualListByID(int emp_id);
+
+
 }

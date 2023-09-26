@@ -59,6 +59,17 @@ public class AnnualController {
         return "annual/list";
     }
 
+
+//@RequestMapping(value ="/list1",method = RequestMethod.GET)
+//public String getAnnualId(Model model,@RequestParam int emp_id){
+//        annualDao.annualListByID(emp_id);
+//        return "annual/write";
+//
+//}
+
+
+
+
     @GetMapping("/getAnnualTime")
     public ResponseEntity<Map<String, Object>> getAnnualTime(@RequestParam("anninfo_code") int anninfo_code) {
         Map<String, Object> response = new HashMap<>();
@@ -130,5 +141,11 @@ public class AnnualController {
         }
         return annual_time;
     }
+
+
+
+
+
+
 
 }
