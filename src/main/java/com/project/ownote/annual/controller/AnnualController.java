@@ -13,6 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -62,7 +63,12 @@ public class AnnualController {
 
 
 
-
+@RequestMapping(value = "/annaul/{emp_id}",method = RequestMethod.GET)
+public String annualList(Model model, @PathVariable("emp_id")Integer emp_id){
+      List<AnnualDto>list= annualDao.annualListByID(emp_id);
+      model.addAttribute("list",list);
+        return "annual/annualList";
+}
 
 
 
@@ -78,14 +84,15 @@ public class AnnualController {
 
 
     @GetMapping("/getAnnualTime")
-    public ResponseEntity<Map<String, Object>> getAnnualTime(@RequestParam("anninfo_code") int anninfo_code) {
-        Map<String, Object> response = new HashMap<>();
+    public ResponseEntity<Map<String, Double>> getAnnualTime(@RequestParam("anninfo_code") int anninfo_code) {
+        Map<String, Double> response = new HashMap<>();
 
-        Double annual_time = 0.0;
+        double annual_time = 0.0;
 
         switch (anninfo_code) {
             case 1 :
                 annual_time = 0.0; // 연차 선택 시 수량은 0
+
 
             case 2:
                 annual_time = 1.0; // 연차 선택 시 수량은 1

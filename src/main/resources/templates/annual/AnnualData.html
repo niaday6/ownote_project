@@ -15,5 +15,23 @@
 
     </tr>
 </table>
+
+<table border="1">
+    <tr><th>연차 사유</th><th>연차 시작일</th><th>연차 종료일</th><th>연차 사용 수량</th>
+        <th>연차 종류</th><th>진행 상황</th><th>수정</th></tr>
+    <tr th:each="obj1 : ${list1}">
+        <td th:text="${obj1.annual_content}"></td>
+        <td th:text="${obj1.annual_startdate}"></td>
+        <td th:text="${obj1.annual_enddate}"></td>
+        <td th:text="${obj1.annual_time}"></td>
+        <td th:text="${obj1.anninfo_code}"></td>
+        <td th:text="${obj1.anncheck_id == 1 ? '승인 대기중' : (obj1.anncheck_id == 2 ? '승인':'반려')}"> </td>
+<!--        <td th:text=""></td>-->
+<!--          <td th:text="${obj1.anncheck_id}"></td>-->
+
+
+    </tr>
+</table>
+
 </body>
 </html>

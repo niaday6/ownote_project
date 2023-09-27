@@ -35,4 +35,9 @@
         select * from annual where emp_id = 1
     </select>
 
+<!--    SELECT a.emp_id,a.annual_content,a.annual_startdate,-->
+<!--    a.annual_enddate,a.annual_time, i.anninfo_name,c.anncheck_pass-->
+<!--    FROM annual a ,anninfo i ,anncheck c where a.anninfo_code = i.anninfo_code and-->
+<!--    a.anncheck_id = c.anncheck_id ;-->
+
 </mapper>

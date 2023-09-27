@@ -1,5 +1,7 @@
 package com.project.ownote.annualData.controller;
 
+import com.project.ownote.annual.dao.AnnualDao;
+import com.project.ownote.annual.dto.AnnualDto;
 import com.project.ownote.annualData.dto.AnnData;
 import com.project.ownote.annualData.repository.AnnDT;
 import com.project.ownote.annualData.repository.AnnualDataRepository;
@@ -18,7 +20,8 @@ import java.util.List;
 public class AnnDataController {
     @Autowired
     AnnDT annDT;
-
+@Autowired
+    AnnualDao annualDao;
     @Autowired
     AnnualDataRepository annualDataRepository;
 
@@ -34,8 +37,14 @@ public class AnnDataController {
     public String AnnualData(Model model, @PathVariable ("emp_id")Integer emp_id){
         List<AnnData> list = annDT.selectListAll(emp_id);
         model.addAttribute("list",list);
+        List<AnnualDto>list1= annualDao.annualListByID(emp_id);
+        model.addAttribute("list1",list1);
         return "annual/AnnualData";
     }
 
+//@RequestMapping(value = "/delete/{annual_id}",method = RequestMethod.GET)
+//    public String delete(){
+//
+//}
 
 }
