@@ -18,8 +18,8 @@ public class AnnData {
 
   private int  anndata_date;
     private int anndata_add;
-    private int anndata_used;
-    private int anndata_extra;
+    private double anndata_used;
+    private double anndata_extra;
     private int emp_id;
     private int annual_id;
 }

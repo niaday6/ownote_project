@@ -22,4 +22,13 @@ public int countAnnual();
     List<AnnualDto>annualListByID(int emp_id);
 
 
+
+   List<AnnualDto>  annualList22(int emp_id);
+
+Integer countAnnualdate(int emp_id);
+
+    AnnualDto annualModify(Long annualId);
+
+
+
 }
